@@ -1,17 +1,19 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 const BodyPart = ({ item, onPress }) => {
-
   return (
     <Pressable
       onPress={() => onPress(item)}
-        style={({ pressed }) => [
-          styles.bodyPart,
-          pressed ? styles.bodyPartPressed : null,
-        ]}
+      style={({ pressed }) => [
+        styles.bodyPart,
+        pressed ? styles.bodyPartPressed : null,
+      ]}
     >
+      <View >
+        <Text style={styles.bodyPartText}>{item}</Text>
+      </View>
       <View>
-        <Text>Body part: {item}</Text>
+        <Text>➔</Text>
       </View>
     </Pressable>
   );
@@ -21,14 +23,24 @@ export default BodyPart;
 
 const styles = StyleSheet.create({
   bodyPart: {
-    backgroundColor: "#66FF00",
-    alignItems: "center",
-    justifyContent: "center",
-    margin: 10,
-    padding: 10,
-    borderRadius: 4,
+    backgroundColor: "#ff6600",
+    flexDirection: "row", 
+    justifyContent: "space-between", 
+    margin: 8,
+    padding: 12,
+    borderRadius: 10,
+    elevation: 4,
   },
   bodyPartPressed: {
-    opacity: 0.5,
+    opacity: 0.8,
+    transform: [{ scale: 0.95 }],
+  },
+  bodyPartText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
+    flexDirection: "row", 
   },
 });
+
+
