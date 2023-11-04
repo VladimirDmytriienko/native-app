@@ -192,17 +192,18 @@ const SearchBar = ({ children, navigation }) => {
     }
 
     try {
-      const response = await axios.get(
-        "https://exercisedb.p.rapidapi.com/exercises/name/" +
-          searchTermRef.current.toLowerCase(),
-        {
-          headers: {
-            "X-RapidAPI-Key": "840bb7bd7amsh6e47bf1e8b33fb6p183936jsn9ae639094dfd",
-            "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
-          },
-        }
-      );
-
+      // const response = await axios.get(
+      //   "https://exercisedb.p.rapidapi.com/exercises/name/" +
+      //     searchTermRef.current.toLowerCase(),
+      //   {
+      //     headers: {
+      //       "X-RapidAPI-Key": "840bb7bd7amsh6e47bf1e8b33fb6p183936jsn9ae639094dfd",
+      //       "X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
+      //     },
+      //   }
+      // );
+      // console.log(response.data);
+      // setSearchResults(response);
       setSearchResults(mockData);
     } catch (error) {
       console.error(error);

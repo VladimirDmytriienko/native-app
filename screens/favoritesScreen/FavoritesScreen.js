@@ -1,29 +1,35 @@
 import  { useState } from 'react';
-import { Text, View, StyleSheet, Modal, TouchableOpacity, Button } from 'react-native';
+import { Text, View, StyleSheet, Modal,  Button, Pressable } from 'react-native';
+import useStore from '../../store/store-favorites';
+
 
 const FavoritesScreen = () => {
   const [isModalVisible, setModalVisible] = useState(false);
 
+  const {bears} = useStore()
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={toggleModal}>
+      <Pressable onPress={toggleModal}>
         <Text>Show Modal</Text>
-      </TouchableOpacity>
+      </Pressable>
 
       <Modal
-        animationType="slide" 
-        transparent={true}
         visible={isModalVisible}
+        animationType="slide" 
+        presentationStyle="pageSheet"
+        // transparent={true}
         onRequestClose={toggleModal}
+
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text>Это ваше красивое модальное окно</Text>
-            <Button title="Закрыть" onPress={toggleModal} />
+            <Text>BESRS QUANTTY :{bears}</Text>
+
+            <Pressable title="Закрыть" onPress={toggleModal} />
           </View>
         </View>
       </Modal>
@@ -39,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   modalContainer: {
-    height: '100',
+    height: 'auto',
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',

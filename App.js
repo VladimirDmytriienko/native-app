@@ -2,9 +2,11 @@ import { SafeAreaView, StyleSheet } from "react-native";
 import { AppNavigation } from "./screens/navigation";
 
 export default function App() {
+
   return (
     <SafeAreaView style={styles.safeView}>
       <AppNavigation />
+
     </SafeAreaView>
   );
 }

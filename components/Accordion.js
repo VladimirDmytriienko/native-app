@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Pressable, Animated, Easing } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Animated, Easing } from 'react-native';
 
 const Accordion = ({ title, content }) => {
   const navigation = useNavigation();
@@ -30,12 +30,12 @@ const Accordion = ({ title, content }) => {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={toggleAccordion}>
+      <Pressable onPress={toggleAccordion}>
         <View style={styles.header}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.icon}>{isExpanded ? '▼' : '▲'}</Text>
         </View>
-      </TouchableOpacity>
+      </Pressable>
       <Animated.View style={[styles.content, { height: animatedHeight }]}>
         {content.map((item, index) => (
           <Pressable key={index + item} onPress={() => handleNavigate(title, item)}>

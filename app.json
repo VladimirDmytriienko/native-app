@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "native-app",
-    "slug": "native-app",
+    "slug": "workout-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.nativeapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "41b14ee4-f7f1-4c19-bab2-5e95eeb43a9d"
+      }
+    },
+    "owner": "vladimir_dmitrienko"
   }
 }

@@ -13,29 +13,29 @@ const BodyPartExercises = () => {
   const route = useRoute();
   const bodyPart = route.params?.bodyPart;
   const [data, setData] = useState(null);
-  useLayoutEffect(()=> {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
-          {
-            params: { limit: '30' },
-            headers: {
-              'X-RapidAPI-Key':
-                '840bb7bd7amsh6e47bf1e8b33fb6p183936jsn9ae639094dfd',
-              'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
-            },
-          }
-        );
-        console.log(response.data);
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
+  // useLayoutEffect(()=> {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+  //         {
+  //           params: { limit: '30' },
+  //           headers: {
+  //             'X-RapidAPI-Key':
+  //               '840bb7bd7amsh6e47bf1e8b33fb6p183936jsn9ae639094dfd',
+  //             'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com',
+  //           },
+  //         }
+  //       );
+  //       console.log(response.data);
+  //       setData(response.data);
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  //   };
+  //   fetchData();
 
-  }, [])
+  // }, [])
 
   return (
 

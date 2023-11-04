@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-
+import { Entypo } from '@expo/vector-icons'; 
 const BodyPart = ({ item, onPress }) => {
   return (
     <Pressable
@@ -9,11 +9,12 @@ const BodyPart = ({ item, onPress }) => {
         pressed ? styles.bodyPartPressed : null,
       ]}
     >
+
       <View >
         <Text style={styles.bodyPartText}>{item}</Text>
       </View>
       <View>
-        <Text>➔</Text>
+        <Entypo name="chevron-right" size={24} color="white" />
       </View>
     </Pressable>
   );

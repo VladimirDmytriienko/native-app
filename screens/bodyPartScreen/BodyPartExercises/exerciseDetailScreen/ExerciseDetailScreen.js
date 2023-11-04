@@ -5,8 +5,8 @@ import ExerciseDetail from "../../../../components/ExerciseDetail";
 const ExerciseDetailScreen = () => {
   const route = useRoute();
   const exercise = route.params?.exercise || route.params?.result;
-  console.log(route);
-  console.log(exercise);
+  // console.log(route);
+  // console.log(exercise);
   return (
     <ExerciseDetail exercise={exercise} />
   );
