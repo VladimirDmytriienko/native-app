@@ -1,12 +1,14 @@
 import  { useState } from 'react';
-import { Text, View, StyleSheet, Modal,  Button, Pressable } from 'react-native';
-import useStore from '../../store/store-favorites';
+import { Text, View, StyleSheet, Modal,  Button, Pressable, FlatList } from 'react-native';
+import {useStore} from '../../store/store-favorites';
+import Exercise from '../../components/Exercise';
 
 
 const FavoritesScreen = () => {
   const [isModalVisible, setModalVisible] = useState(false);
 
-  const {bears} = useStore()
+  const {bears, favExercises} = useStore()
+  // console.log(favExercises);
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
   };
@@ -14,8 +16,13 @@ const FavoritesScreen = () => {
   return (
     <View style={styles.container}>
       <Pressable onPress={toggleModal}>
-        <Text>Show Modal</Text>
+        <Text>Сreate a workout</Text>
       </Pressable>
+      <FlatList 
+        data={favExercises} 
+        renderItem={({ item }) => <Exercise style={styles.item} item={item} />}
+        /> 
+
 
       <Modal
         visible={isModalVisible}
@@ -27,9 +34,14 @@ const FavoritesScreen = () => {
       >
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
-            <Text>BESRS QUANTTY :{bears}</Text>
+            {/* <Text>BESRS QUANTTY :{bears}</Text>
+            <Text>Fav :{favExercises[0].name}</Text> */}
+            <Pressable title="Close" onPress={toggleModal}><Text>Close</Text></Pressable>
 
-            <Pressable title="Закрыть" onPress={toggleModal} />
+            
+
+
+
           </View>
         </View>
       </Modal>

@@ -7,6 +7,7 @@ import ExerciseDetailScreen from "./bodyPartScreen/BodyPartExercises/exerciseDet
 import FavoritesScreen from "./favoritesScreen/FavoritesScreen";
 import SearchScreen from "./searchScreen/SearchScreen";
 import TargetEquipmentScreen from "./searchScreen/target-equipment-skreen/TargetEquipmentScreen";
+import TraningScreen from "./traningsScreen/TraningScreen";
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -63,6 +64,7 @@ export function AppNavigation() {
       >
         <Tab.Screen name="Parts" component={Parts} />
         <Tab.Screen name="Favorites" component={FavoritesScreen} />
+        <Tab.Screen name="Tranings" component={TraningScreen} />
         <Tab.Screen name="Search" component={Search} />
       </Tab.Navigator>
     </NavigationContainer>

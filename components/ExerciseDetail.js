@@ -1,12 +1,14 @@
 import { Text, View, Image, StyleSheet, Pressable, ScrollView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import useStore from "../store/store-favorites";
+import {useStore} from "../store/store-favorites";
 
 
 const ExerciseDetail = ({ exercise }) => {
 
-  const increasePopulation = useStore((state) => state.increasePopulation)
-
+  const addFavExercise = useStore((state) => state.addFavExercise)
+  const addFavExerciseOnClick = (exercise) => {
+    addFavExercise(exercise)
+  }
   // console.log(exercise.secondaryMuscles);
   // console.log(exercise.secondaryMuscles.join(", "));
   return (
@@ -31,7 +33,7 @@ const ExerciseDetail = ({ exercise }) => {
             }. ${step}`}</Text>
           ))}
         </View>
-        <Pressable style={styles.favoritesButton} onPress={increasePopulation}>
+        <Pressable style={styles.favoritesButton} onPress={addFavExerciseOnClick(exercise)}>
           <View>
             <Text>Add to favorites</Text>
           </View>

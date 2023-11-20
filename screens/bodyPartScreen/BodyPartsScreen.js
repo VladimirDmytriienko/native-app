@@ -14,7 +14,7 @@ const BodyPartsScreen = ({navigation}) => {
   
   const handleSearch = () => {
     // Обработка нажатия на кнопку поиска
-    // Вы можете добавить здесь логику для поиска
+
   };
 
 
